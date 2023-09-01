@@ -5,7 +5,6 @@ const http = require('http');
 const { join } = require('path');
 const { cwd } = require('process');
 const fs = require('fs');
-
 const { Server } = require('socket.io');
 
 const port = 3000;
