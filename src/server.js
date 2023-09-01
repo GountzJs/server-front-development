@@ -1,13 +1,13 @@
-const config = require('../live-server.json');
-const cors = require('cors');
-const express = require('express');
-const http = require('http');
-const { join } = require('path');
-const { cwd } = require('process');
-const fs = require('fs');
-const { Server } = require('socket.io');
+import cors from 'cors';
+import express from 'express';
+import fs from 'fs';
+import http from 'http';
+import open from 'open';
+import { join } from 'path';
+import { cwd } from 'process';
+import { Server } from 'socket.io';
+const config = JSON.parse(fs.readFileSync(join(cwd() + '/live-server.json')));
 
-const port = 3000;
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
@@ -31,6 +31,9 @@ io.on('connection', (socket) => {
   });
 });
 
-server.listen(port, () => {
-  console.log(`Server running on port: http://localhost:${port}`);
+server.listen(config.server.port, config.server.host, () => {
+  console.log(
+    `Server running on port: http://${config.server.host}:${config.server.port}`
+  );
+  open(`http://${config.server.host}:${config.server.port}`);
 });

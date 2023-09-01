@@ -5,19 +5,19 @@
   },
   "styles": {
     "url": "/styles",
-    "path": "/project/styles"
+    "path": "project/styles"
   },
   "javascript": {
     "url": "/js",
-    "path": "/project/js"
+    "path": "project/js"
   },
   "public": {
     "url": "/",
-    "path": "/project/public"
+    "path": "project/public"
   },
   "assets": {
     "url": "/assets",
-    "path": "/project/assets"
+    "path": "project/assets"
   },
   "server": {
     "host": "localhost",
