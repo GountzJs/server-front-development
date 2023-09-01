@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+}
+
+body {
+  background-image: url('https://wallpaperaccess.com/full/138588.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+}
+
+body::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.3); /* Color negro semi-transparente */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Coloca el ::before detrás del contenido del body */
+}
+
+main {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+main > button {
+  background: #00ffc8;
+  border: none;
+  border-radius: 15px;
+  color: #000;
+  cursor: pointer;
+  margin-top: 25px;
+  padding: 10px 45px;
+  font-weight: 700;
+}
+
+main > button:hover {
+  background: #00ddad;
+}
