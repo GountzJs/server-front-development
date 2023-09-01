@@ -1,0 +1,26 @@
+{
+  "html": {
+    "path": "/project",
+    "name": "index.html"
+  },
+  "styles": {
+    "url": "/styles",
+    "path": "/project/styles"
+  },
+  "javascript": {
+    "url": "/js",
+    "path": "/project/js"
+  },
+  "public": {
+    "url": "/",
+    "path": "/project/public"
+  },
+  "assets": {
+    "url": "/assets",
+    "path": "/project/assets"
+  },
+  "server": {
+    "host": "localhost",
+    "port": 3000
+  }
+}

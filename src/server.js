@@ -1,4 +1,4 @@
-const { htmlName } = require('../filename.json');
+const config = require('../live-server.json');
 const cors = require('cors');
 const express = require('express');
 const http = require('http');
@@ -14,12 +14,14 @@ const io = new Server(server);
 
 app.use(cors({ origin: '*' }));
 
-app.use('/styles', express.static('project/styles'));
-app.use('/js', express.static('project/js'));
-app.use('/', express.static('project/public'));
-app.use('/images', express.static('project/images'));
+app.use(config.styles.url, express.static(config.styles.path));
+app.use(config.javascript.url, express.static(config.javascript.path));
+app.use(config.public.url, express.static(config.public.path));
+app.use(config.assets.url, express.static(config.assets.path));
 
-app.use('/*', (req, res) => res.sendFile(join(cwd() + `/project/${htmlName}`)));
+app.use('/*', (req, res) =>
+  res.sendFile(join(cwd() + `${config.html.path}/${config.html.name}`))
+);
 
 io.on('connection', (socket) => {
   fs.watch('project', { recursive: true }, (eventType, filename) => {
